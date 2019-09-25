@@ -29,7 +29,7 @@ def update_info(mem_info, cpu_info):
     mem_info['mem_buffers_cached'] = mem_info_all[7] + mem_info_all[8]
 
     cpu_info['cpu_core_cnt'] = psutil.cpu_count()
-    cpu_info['cpu_core_percent'] = psutil.cpu_percent(interval=0.1, percpu=True)
+    cpu_info['cpu_core_percent'] = sum(psutil.cpu_percent(interval=0.1, percpu=True))
     cpu_info['cpu_load_avg'] = psutil.getloadavg()
 
     return mem_info, cpu_info    
