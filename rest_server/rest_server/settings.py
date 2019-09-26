@@ -65,12 +65,8 @@ WSGI_APPLICATION = 'rest_server.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'observer',
-        'USER': 'observer',
-        'PASSWORD': '0326',
-        'HOST': 'localhost',
-        'PORT': 3306,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(os.path.abspath(BASE_DIR + "/../"), 'observer.db'),
     }
 }
 
