@@ -3,6 +3,3 @@ flask_socketio
 pymysql
 psutil
 requests
-Django
-djangorestframework
-mysqlclient

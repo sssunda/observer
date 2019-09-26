@@ -1,4 +1,4 @@
-#!/home/sssunda/Documents/dev/observer/myvenv/bin/python
+#!/home/sssunda/Documents/dev/observer/observer/venv_observer/bin/python
 
 # -*- coding: utf-8 -*-
 import re

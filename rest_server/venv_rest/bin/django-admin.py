@@ -1,4 +1,4 @@
-#!/home/sssunda/Documents/dev/observer/myvenv/bin/python
+#!/home/sssunda/Documents/dev/observer/rest_server/venv_rest/bin/python
 from django.core import management
 
 if __name__ == "__main__":
