@@ -35,7 +35,7 @@ def update_info(mem_info, cpu_info):
     return mem_info, cpu_info    
 
 # connect to server
-soc_io.connect('http://localhost:5000') 
+soc_io.connect('http://ec2-13-125-244-56.ap-northeast-2.compute.amazonaws.com:5000/') 
 
 while True :
     time.sleep(300)
