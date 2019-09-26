@@ -1,5 +1,5 @@
 import React from "react";
-
+import * as c3 from "c3";
 import sc from "styled-components";
 
 
@@ -12,11 +12,9 @@ class TabMemory extends React.Component {
   }
 
   componentDidMount() {
-    this.renderChart();
   }
 
   componentDidUpdate() {
-    this.renderChart();
   }
 
   changeData = () => {
