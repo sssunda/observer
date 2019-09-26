@@ -106,4 +106,4 @@ def insert_cpu(server_name, server_ip, message):
     db.commit()
 
 if __name__ == '__main__':
-    soc_io.run(app)
+    soc_io.run(app, host = "0.0.0.0")
