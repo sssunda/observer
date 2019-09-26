@@ -5,6 +5,7 @@ from server import views
 
 
 urlpatterns = [
-    path('', views.view),
+    path('api/memory', views.view_mem),
+    path('api/cpu', views.view_cpu),
     path('admin/', admin.site.urls),
 ]
