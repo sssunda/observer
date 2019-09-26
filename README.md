@@ -12,4 +12,4 @@
 - OS : Ubuntu
 - DB : MySQL
 - Framework : Django, Flask, React
-- Dev host: ec2-13-125-244-56.ap-northeast-2.compute.amazonaws.com
+- Dev host: ec2-15-164-250-153.ap-northeast-2.compute.amazonaws.com
