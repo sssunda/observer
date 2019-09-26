@@ -38,5 +38,5 @@ def update_info(mem_info, cpu_info):
 soc_io.connect('http://ec2-13-125-244-56.ap-northeast-2.compute.amazonaws.com:5000/') 
 
 while True :
-    time.sleep(300)
+    time.sleep(30)
     message()
