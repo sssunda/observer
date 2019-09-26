@@ -11,4 +11,4 @@
 
 - OS : Ubuntu
 - DB : MySQL
-- Framework : Django, Flask, Vue
+- Framework : Django, Flask, React
