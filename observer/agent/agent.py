@@ -38,5 +38,5 @@ def update_info(mem_info, cpu_info):
 soc_io.connect('http://localhost:5000') 
 
 while True :
-    time.sleep(3)
+    time.sleep(300)
     message()
