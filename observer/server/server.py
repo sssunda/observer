@@ -10,7 +10,7 @@ cursor = db.cursor()
 # create tble
 query = """
 CREATE TABLE IF NOT EXISTS server_list(
-    no INTEGER PRIMARY_KEY,
+    no INTEGER PRIMARY_KEY autoincrement,
     server_name TEXT, 
     server_ip TEXT,
     stored_time DATETIME)
@@ -19,7 +19,7 @@ cursor.execute(query)
 
 query = """
 CREATE TABLE IF NOT EXISTS daily_mem(
-    no INTEGER PRIMARY KEY,
+    no INTEGER PRIMARY KEY autoincrement,
     server_name TEXT,
     server_ip TEXT,
     total INTEGER,
@@ -33,7 +33,7 @@ cursor.execute(query)
 
 query = """
 CREATE TABLE IF NOT EXISTS daily_cpu(
-    no INTEGER PRIMARY KEY,
+    no INTEGER PRIMARY KEY autoincrement,
     server_name TEXT,
     server_ip TEXT,
     core_cnt INTEGER,
