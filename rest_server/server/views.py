@@ -2,10 +2,16 @@ from .models import DailyCpu, DailyMem, ServerList
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from datetime import datetime
+from .serializers import ServerSerializer
+
 
 @api_view(['GET'])
-def view_mem(request):
-    server_list = ServerList.objects.all().values_list('server_name', flat=True)
+def view_mem(request, pk = None):
+    if pk :
+        server_list = ServerList.objects.filter(pk = pk)
+    else :
+        server_list = ServerList.objects.all()
+    server_list = server_list.values_list('server_name', flat=True)
     data = []
 
     for server in server_list:
@@ -36,8 +42,14 @@ def view_mem(request):
     return Response({'total': len(server_list), 'data': data})
 
 @api_view(['GET'])
-def view_cpu(request):
-    server_list = ServerList.objects.all().values_list('server_name', flat=True)
+def view_cpu(request, pk = None):
+    if pk :
+        server_list = ServerList.objects.filter(pk = pk)
+    else :
+        server_list = ServerList.objects.all()
+
+    server_list = server_list.values_list('server_name', flat=True)
+
     data = []
 
     for server in server_list:
@@ -66,3 +78,15 @@ def view_cpu(request):
         data.append(send_data)
 
     return Response({'total': len(server_list), 'data': data})
+
+@api_view(['GET'])
+def view_serverlist(request, server_name = None):
+    if server_name :
+        server_list = ServerList.objects.filter(server_name = server_name)
+    else :
+        server_list = ServerList.objects.all()
+
+    server_serializer = ServerSerializer(server_list, many = True)
+    if server_name :
+        return Response({'data':server_serializer.data[0]})
+    return Response({'total': len(server_list), 'data':server_serializer.data})
