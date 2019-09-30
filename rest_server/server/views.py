@@ -6,9 +6,9 @@ from .serializers import ServerSerializer
 
 
 @api_view(['GET'])
-def view_mem(request, pk = None):
-    if pk :
-        server_list = ServerList.objects.filter(pk = pk)
+def view_mem(request, server_name = None):
+    if server_name :
+        server_list = ServerList.objects.filter(server_name = server_name)
     else :
         server_list = ServerList.objects.all()
     server_list = server_list.values_list('server_name', flat=True)
@@ -39,12 +39,14 @@ def view_mem(request, pk = None):
 
         data.append(send_data)
 
+    if server_name :
+        return Response({'data': data[0]['data']})
     return Response({'total': len(server_list), 'data': data})
 
 @api_view(['GET'])
-def view_cpu(request, pk = None):
-    if pk :
-        server_list = ServerList.objects.filter(pk = pk)
+def view_cpu(request, server_name = None):
+    if server_name :
+        server_list = ServerList.objects.filter(server_name = server_name)
     else :
         server_list = ServerList.objects.all()
 
@@ -77,6 +79,8 @@ def view_cpu(request, pk = None):
 
         data.append(send_data)
 
+    if server_name :
+        return Response({'data': data[0]['data']})
     return Response({'total': len(server_list), 'data': data})
 
 @api_view(['GET'])
