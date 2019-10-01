@@ -4,6 +4,12 @@ import sc from "styled-components";
 import axios from "axios";
 import PanelCPU from "components/PanelCPU";
 
+const TabBody = sc.div`
+display: block;
+margin: 0 auto;
+width: 80%;
+`;
+
 class TabCPU extends React.Component {
   state = {
     data: [],
@@ -32,10 +38,10 @@ class TabCPU extends React.Component {
   
   render() {
     return (
-      <div>
+      <TabBody>
         <button onClick={this.updateData}>Update</button>
         {this.generateDOM()}
-      </div>
+      </TabBody>
     )
   }
 }

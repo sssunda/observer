@@ -4,6 +4,12 @@ import sc from "styled-components";
 import axios from "axios";
 import PanelMemory from "components/PanelMemory";
 
+const TabBody = sc.div`
+display: block;
+margin: 0 auto;
+width: 80%;
+`;
+
 class TabCPU extends React.Component {
   state = {
     data: [],
@@ -15,16 +21,8 @@ class TabCPU extends React.Component {
   }
 
   updateData = () => {
-    let endpoint = process.env.REACT_APP_ENDPOINT;
-    if (typeof endpoint == "undefined") {
-      console.log("endpoint does not defined")
-      return;
-    }
-
-
     axios.get(process.env.REACT_APP_ENDPOINT + "/memory/server_list")
       .then(response => {
-        console.log(response.data.data);
         this.setState({ data: response.data.data });
       });
   }
@@ -39,10 +37,10 @@ class TabCPU extends React.Component {
   
   render() {
     return (
-      <div>
+      <TabBody>
         <button onClick={this.updateData}>Update</button>
         {this.generateDOM()}
-      </div>
+      </TabBody>
     )
   }
 }

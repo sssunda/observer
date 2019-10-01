@@ -8,21 +8,10 @@ import { GlobalHotKeys } from "react-hotkeys";
 import TabCPU from "components/TabCPU";
 import TabMemory from "components/TabMemory";
 
-const TabBody = sc.div`
-display: block;
-margin: 0 auto;
-width: 80%;
-`;
-
 const keyMap = {
   TAB_CPU: "1",
   TAB_MEMORY: "2",
 }
-
-const panels = [
-  "cpu",
-  "memory",
-]
 
 class Dashboard extends React.Component {
   handlers = {

@@ -9,10 +9,14 @@ class TimeseriesUsageChart extends React.Component {
     c3.generate({
       bindto: "#chart1",
       data: this.props.data,
+      point: {
+        show: false
+      },
       axis: {
         x: {
           type: "timeseries",
           tick: {
+            count: 5,
             format: "%Y-%m-%d %H:%M:%S"
           },
         }
@@ -36,14 +40,13 @@ class TimeseriesUsageChart extends React.Component {
   render() {
     return (
       <div>
-      <div id="chart1"/>
+        <div id="chart1" />
       </div>
     );
   }
 }
 
 TimeseriesUsageChart.propTypes = {
-  chart_id: PropTypes.string.isRequired,
   data: PropTypes.object.isRequired,
 }
 

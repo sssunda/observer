@@ -32,7 +32,7 @@ class PanelCPU extends React.Component {
           ['cpu_usage'].concat(resp_data.cpu_core_percent),
         ],
         type: "area-spline",
-        groups: [['x', 'cpu_usage']],
+        groups: [['cpu_usage']],
       }});
     })
   }
@@ -40,10 +40,10 @@ class PanelCPU extends React.Component {
   render() {
     return (
       <div>
-      {this.props.server_ip}<br/>
-      {this.props.server_name}<br/>
-      {this.props.stored_time}<br/>
-      <TimeseriesUsageChart data={this.state.chart_data} />
+        IP: {this.props.server_ip}<br />
+        Hostname: {this.props.server_name}<br />
+        Update timestamp: {this.props.stored_time}<br />
+        <TimeseriesUsageChart data={this.state.chart_data} />
       </div>
     )
   }
