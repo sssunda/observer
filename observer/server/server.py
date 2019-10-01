@@ -10,7 +10,7 @@ cursor = db.cursor()
 # create tble
 query = """
 CREATE TABLE IF NOT EXISTS server_list(
-    no INTEGER PRIMARY_KEY autoincrement,
+    no INTEGER PRIMARY KEY autoincrement,
     server_name TEXT, 
     server_ip TEXT,
     stored_time DATETIME)
